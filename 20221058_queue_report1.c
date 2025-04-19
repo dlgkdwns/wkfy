@@ -39,12 +39,11 @@ bool enqueue(LinearQueue* q, int value) {
 int dequeue(LinearQueue* q) {
     if (isEmpty(q)) {
         printf("큐가 비어 있습니다.\n");
-        q->front = 0;
-        q->rear = -1;
         return -1;  // 큐가 비어 있을 때 -1 반환
     }
     int value = q->data[q->front];
     q->front++;
+    if(isEmpty(q)) initQueue(q);
     return value;
 }
 void printQueue(LinearQueue* q) {
