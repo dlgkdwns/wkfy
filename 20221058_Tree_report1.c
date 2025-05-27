@@ -88,11 +88,16 @@ int getMax(TreeNode* node) {
 }
 
 void searchRange(TreeNode* node, int min, int max) {
-    if (node == NULL) return;
-    if (node->data > min) searchRange(node->left, min, max);
-    if (node->data >= min && node->data <= max)
-        printf("%d ", node->data);
-    if (node->data < max) searchRange(node->right, min, max);
+     if (node == NULL) return;
+     if (node->data > min) {
+         searchRange(node->left, min, max);
+     }
+     if (node->data >= min && node->data <= max) {
+         printf("%d ", node->data);
+     }
+     if (node->data < max) {
+         searchRange(node->right, min, max);
+     }
 }
 
 int main() {
