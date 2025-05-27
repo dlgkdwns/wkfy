@@ -78,7 +78,7 @@ int getSum(TreeNode* node) {
 }
 
 int getMax(TreeNode* node) {
-    if (node == NULL) return -2147483648; 
+    if (node == NULL) return INT_MIN;
     int leftMax = getMax(node->left);
     int rightMax = getMax(node->right);
     int max = node->data;
